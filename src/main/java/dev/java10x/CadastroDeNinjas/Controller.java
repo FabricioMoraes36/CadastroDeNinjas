@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @GetMapping("/BoasVindas")
     public String boasVindas() {
-        return "Essa é a minha primeira mensagem ness rota";
+        return "Essa é a minha primeira mensagem nessa rota";
     }
 }
