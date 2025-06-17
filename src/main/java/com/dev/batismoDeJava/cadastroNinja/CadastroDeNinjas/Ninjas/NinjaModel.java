@@ -1,9 +1,10 @@
-package com.dev.batismoDeJava.cadastroNinja.CadastroDeNinjas;
+package com.dev.batismoDeJava.cadastroNinja.CadastroDeNinjas.Ninjas;
+import com.dev.batismoDeJava.cadastroNinja.CadastroDeNinjas.Missoes.MissoesModel;
+import jakarta.persistence.*;
+import java.util.List;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+@Entity
+@Table(name = "tb_cadastro")
 public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -11,6 +12,7 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    private List<MissoesModel> missoes;
 
     public NinjaModel() {
     }
