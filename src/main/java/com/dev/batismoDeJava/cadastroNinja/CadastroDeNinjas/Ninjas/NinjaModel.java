@@ -15,17 +15,25 @@ import java.util.List;
 public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @Column(name ="id")
     private Long id;
 
+    @Column(name ="nome")
     private String nome;
+
     //Faz com que os itens dessa coluna sejam unicos nela,não possibilitando as repetições do mesmo item
     @Column(unique = true)
     private String email;
 
+    @Column(name ="img_url")
+    private String imgUrl;
+
+    @Column(name ="idade")
     private int idade;
 
     //uma missão por ninja
     @ManyToOne
+    @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
 
 
