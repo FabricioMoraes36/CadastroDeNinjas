@@ -2,12 +2,12 @@ package com.dev.batismoDeJava.cadastroNinja.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("ninjas")
 public class NinjaController {
 
     @GetMapping("/BoasVindas")
     public void mensagemController(){
-        System.out.println("Essa é minha primeira mensagem");
+        System.out.println("Bem vindo ao controller Ninjas");
     }
 
     //Endpoint - Criar ninjas
@@ -25,19 +25,19 @@ public class NinjaController {
     //Endpoint - Mostrar os ninjas
     @GetMapping("/todos")
     public String buscaNinja(){
-        return "Mostrar ninjas";
+        return "Mostrar todos os ninjas";
     }
 
     //Endpoint - alterar dados do ninja por id
     @PutMapping("/alterarPorId")
     public String alterarNinjaPorId(){
-        return "Dados alterados com sucesso pelo id";
+        return "Dados do ninja atualizados por id";
     }
 
     //Endpoint - Deletar ninjas por id
     @DeleteMapping("/deletarPorId")
     public String deletarNinja(){
-        return "Ninja deletado com sucesso pelo id";
+        return "Ninja deletado por id";
     }
 
 
