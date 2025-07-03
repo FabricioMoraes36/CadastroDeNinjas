@@ -30,7 +30,7 @@ public class NinjaController {
     //@PathVariable torna a variavel Long id parte da url,é um 'caminho variavel' pq o usuario vai digitar o valor desse trecho do url
     @GetMapping("/todos/{id}")
     public NinjaModel listarNinjasPorID(@PathVariable Long id) {
-       return ninjaService.listarNinjasPorID(id);
+       return ninjaService.NinjaPorID(id);
     }
 
     //Endpoint - Mostrar os ninjas
