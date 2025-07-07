@@ -22,27 +22,27 @@ public class NinjaController {
 
     //Endpoint - Criar ninjas
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninjaModel) {
-        return ninjaService.criarNinja(ninjaModel);
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja) {
+        return ninjaService.criarNinja(ninja);
     }
 
     //Endpoint - mostrar ninjas por id
     //@PathVariable torna a variavel Long id parte da url,é um 'caminho variavel' pq o usuario vai digitar o valor desse trecho do url
     @GetMapping("/todos/{id}")
-    public NinjaModel listarNinjasPorID(@PathVariable Long id) {
+    public NinjaDTO listarNinjasPorID(@PathVariable Long id) {
        return ninjaService.NinjaPorID(id);
     }
 
     //Endpoint - Mostrar os ninjas
     //Metodo depende da injeção de dependencia do service
     @GetMapping("/todos")
-    public List<NinjaModel> listarNinjas() {
+    public List<NinjaDTO> listarNinjas() {
         return ninjaService.listarNinjas();
     }
 
     //Endpoint - alterar dados do ninja por id
     @PutMapping("/alterar/{id}")
-    public NinjaModel alterarNinja(@PathVariable Long id,@RequestBody NinjaModel ninjaAtualizado) {
+    public NinjaDTO alterarNinja(@PathVariable Long id,@RequestBody NinjaDTO ninjaAtualizado) {
             return ninjaService.atualizarNinja(id,ninjaAtualizado);
         }
 
