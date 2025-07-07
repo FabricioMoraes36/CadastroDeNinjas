@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 //Torna essa nossa classe uma entidade para o banco de dados
@@ -15,6 +16,7 @@ import java.util.List;
 //cria getters e setters
 @Data
 //Cria um construtor com todos os argumentos
+@ToString
 @AllArgsConstructor
 //Cria um construtor sem argumento algum
 @NoArgsConstructor

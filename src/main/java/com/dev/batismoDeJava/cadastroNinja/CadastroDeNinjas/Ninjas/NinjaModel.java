@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Table(name = "tb_cadastro")
+@ToString(exclude = "missoes")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
