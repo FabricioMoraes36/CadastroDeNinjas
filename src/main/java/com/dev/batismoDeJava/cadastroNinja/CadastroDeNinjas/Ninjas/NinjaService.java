@@ -12,9 +12,9 @@ public class NinjaService {
     //@Autowired
     //modificador de acesso - classe de repository - nome da variavel(é um padrão ter o mesmo nome do repository)
     //Injeção de dependencia do NinjaRepository pra usar os metodos ja prontos do jpa
-    private NinjaRepository ninjaRepository;
+    private final NinjaRepository ninjaRepository;
     //instancia do mapper
-    private NinjaMapper ninjaMapper;
+    private final NinjaMapper ninjaMapper;
 
     //recriamos o construtor com o ninjaMapper ja incluso
     public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {

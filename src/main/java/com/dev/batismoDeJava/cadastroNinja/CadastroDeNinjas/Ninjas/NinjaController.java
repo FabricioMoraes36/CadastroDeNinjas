@@ -11,7 +11,7 @@ import java.util.Optional;
 @RequestMapping("ninjas")
 public class NinjaController {
     //Injeção de dependencia do service(NinjaService)
-    private NinjaService ninjaService;
+    private final NinjaService ninjaService;
 
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
