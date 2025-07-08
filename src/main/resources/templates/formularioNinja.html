@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;">
+    <title th:text="${ninja.id} != null ? 'Editar Ninja' : 'Criar Ninja'">Formulário Ninja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            padding-top: 60px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${ninja.id} != null ? 'Editar Ninja' : 'Criar Ninja'"></h1>
+
+<form th:action="@{${ninja.id} != null ? '/ninjas/ui/alterar/id/' + ${ninja.id} : '/ninjas/ui/criar'}"
+      method="post" th:object="${ninja}">
+
+    <input type="hidden" th:if="${ninja.id != null}" th:field="*{id}" />
+
+    <label>Imagem do Ninja:</label>
+    <input type="text" th:field="*{imgUrl}" /><br/>
+
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}" /><br/>
+
+    <label>Idade:</label>
+    <input type="text" th:field="*{idade}" /><br/>
+
+    <label>Email:</label>
+    <input type="text" th:field="*{email}" /><br/>
+
+    <label>Rank:</label>
+    <input type="text" th:field="*{rank}" /><br/>
+
+    <label>Missão:</label>
+    <input type="text" th:field="*{missoes}" /><br/>
+
+    <button type="submit" th:text="${ninja.id} != null ? 'Atualizar' : 'Cadastrar'"></button>
+</form>
+<a th:href="/ninjas/ui/todos">Voltar</a>
+</body>
+</html>
