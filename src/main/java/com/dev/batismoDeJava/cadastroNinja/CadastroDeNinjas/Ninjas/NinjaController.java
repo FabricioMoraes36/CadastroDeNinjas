@@ -20,11 +20,21 @@ public class NinjaController {
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
     }
+
+
+
+
+
     @GetMapping("/BoasVindas")
     @Operation(summary = "Mensagem de boas vindas",description = "exibe uma mensagem de boas vindas para quem acessar essa rota")
     public void mensagemController() {
         System.out.println("Bem vindo ao controller Ninjas");
     }
+
+
+
+
+
 
     //Endpoint - Criar ninjas
     @PostMapping("/criar")
@@ -37,6 +47,13 @@ public class NinjaController {
         NinjaDTO novoNinja = ninjaService.criarNinja(ninja);
         return ResponseEntity.status(HttpStatus.CREATED).body("Ninja criado com sucesso!" + novoNinja.getNome() + " E tem o id: " + novoNinja.getId());
     }
+
+
+
+
+
+
+
     //Endpoint - mostrar ninjas por id
     //@PathVariable torna a variavel Long id parte da url,é um 'caminho variavel' pq o usuario vai digitar o valor desse trecho do url
     @GetMapping("/todos/{id}")
@@ -54,6 +71,11 @@ public class NinjaController {
 
     }
 
+
+
+
+
+
     //Endpoint - Mostrar os ninjas
     //Metodo depende da injeção de dependencia do service
     @GetMapping("/todos")
@@ -62,6 +84,10 @@ public class NinjaController {
         List<NinjaDTO>ninjas = ninjaService.listarNinjas();
         return ResponseEntity.ok(ninjas);
     }
+
+
+
+
 
     //Endpoint - alterar dados do ninja por id
     @PutMapping("/alterar/{id}")
@@ -80,6 +106,9 @@ public class NinjaController {
            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não existe ninja cadastrado nesse id:" + id);
        }
         }
+
+
+
 
 
     //Endpoint - Deletar ninjas por id
